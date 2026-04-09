@@ -11,7 +11,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const montserrat = Montserrat({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"], // optional, choose weights you need
+  weight: ["400", "500", "600", "700"], // 
 });
 
 export const metadata: Metadata = {
