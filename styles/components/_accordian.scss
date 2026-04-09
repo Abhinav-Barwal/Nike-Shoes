@@ -1,0 +1,31 @@
+@use '../variable' as *;
+
+.accordion {
+    .accordion-item {
+        .accordion-collapse.collapse {
+            visibility: visible;
+        }
+        .accordion-header {
+            .accordion-button {
+                background-color: $bg-light;
+                // border-top: 2px solid $border-dark;
+                border-bottom: 2px solid $border-dark;
+                &:focus {
+                    box-shadow: none;
+                }
+                &::after {
+                    color: $text-dark;
+                    background: none;
+                    content: "\f282";
+                    font-family: "bootstrap-icons";
+                }
+                &:not(.collapsed) {
+                    color: $text-dark;
+                }
+            }
+        }
+        .accordion-body {
+            border-bottom: 2px solid $border-dark;
+        }
+    }   
+}

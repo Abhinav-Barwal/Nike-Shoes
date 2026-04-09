@@ -1,0 +1,45 @@
+@use '../variable' as *;
+
+#footer {
+    padding-top: 60px;
+    .container {
+        .seprator-top{
+            padding-bottom: 60px;
+            img {
+                width: 100%;
+            }
+        }
+        .social-icons {
+            @include flex-center;
+            gap: 15px;
+            padding: 20px;
+            .facebook,.twitter,.instagram,.youtube {
+                border: 1px solid $border-dark;
+                border-radius: 50%;
+                height: 40px;
+                width: 40px;
+                @include flex-center;
+                cursor: pointer;
+                transition: 0.3s ease-in-out;
+                i {
+                    font-size: 20px;
+                    border-radius: 50%;
+                    transition: 0.3s ease-in-out;
+                }
+                &:hover {
+                    transition: 0.3s ease-in-out;
+                    border: 1px solid $border-grey;
+                    i {
+                        color: $text-darkGrey;
+                        transition: 0.3s ease-in-out;
+                    }
+                }
+            }
+        }
+        p {
+            padding: 20px;
+            text-align: center;
+            margin: 0;
+        }
+    }
+}

@@ -1,0 +1,21 @@
+// Variable
+@use './variable';
+
+//Base
+@use './base/reset';
+
+//Layouts
+@use './layouts/header';
+@use './layouts/footer';
+
+// Pages
+@use './pages/splashPage';
+@use './pages/clickLogin';
+@use './pages/logIn';
+@use './pages/signUp';
+@use './pages/home';
+@use './pages/mens';
+@use './pages/testPage';
+
+// Components
+@use './components/accordian';

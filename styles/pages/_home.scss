@@ -1,0 +1,210 @@
+@use '../variable' as *;
+
+main {
+    #hero {
+        flex-wrap: wrap;
+        @include offerBar;
+        .swiper {
+            padding-bottom: 60px;
+            .swiper-initialized {
+                padding-bottom: 60px;
+                @media screen and (max-width: 992px) {
+                    padding-bottom: 0;
+                }
+                .swiper-wrapper {
+                    .swiper-slide {
+                        overflow: hidden;
+                        transition: 0.5s ease-in-out;
+                        padding-top: 20px;
+                        .swiper-img {
+                            object-fit: cover;
+                            max-height: 440px;
+                            height: 100%;
+                            width: 100%;
+                        }
+                        &.swiper-slide-prev {
+                            transform: scale(1.1);
+                            transition: 0.5s ease-in-out;
+                        }
+                        &.swiper-slide-next {
+                            transform: scale(1.1);
+                            transition: 0.5s ease-in-out;
+                        }
+                    }
+                }
+                .swiper-pagination  {
+                    span {
+                        background-color: $bg-darkestGrey;
+                        height: 8px;
+                        opacity: 1;
+                        &.swiper-pagination-bullet-active {
+                            background-color: $bg-darkestGrey;
+                        }
+                    }
+                }
+                .swiper-button-prev,.swiper-button-next {
+                    border-radius: 50%;
+                    height: 70px;
+                    width: 70px;
+                    background-color: $bg-dark;
+                    border: 6px solid $bg-light;
+                    transition: 0.3s ease-in-out;
+                    svg {
+                        height: 30px !important;
+                        width: 30px !important;
+                        stroke: $border-light;
+                        path {
+                            fill: $bg-grey;
+                            transition: 0.2s ease-in-out;
+                        }
+                    }
+                    &:hover {
+                        background-color: $bg-light;
+                        border: 2px solid $bg-dark;
+                        transition: 0.3s ease-in-out;
+                        svg {
+                            stroke: $border-dark;
+                            path {
+                                fill: $bg-dark;
+                                transition: 0.3s ease-in-out;
+                            }
+                        }
+                    }
+                }  
+            }
+        }
+    }
+    #whats-trending {
+        display: flex;
+        flex-direction: column;
+        .container-fluid {
+            h1 {
+                text-align: center;
+                letter-spacing: 2px;
+            }
+            .nike-videoAdd {
+                max-height: 500px;
+                height: 100%;
+                overflow: hidden;
+                video {
+                    margin-inline: auto;
+                }
+            }
+        }
+    }
+    #top-picks {
+        padding-top: 60px;
+        .container {
+            h2 {
+                margin-bottom: 30px;
+            }
+            .diff-sections {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 20px;
+                @media screen and (max-width: 1440px) {
+                    grid-template-columns: repeat(3, 1fr);
+                }
+                @media screen and (max-width: 992px) {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+                @media screen and (max-width: 576px) {
+                    grid-template-columns: repeat(1, 1fr);
+                    img {
+                        margin-inline: auto;
+                    }
+                }
+                .mens, .womens, .childrens, .sale {
+                    cursor: pointer;
+                    h3 {
+                        margin-bottom: 20px;
+                        span {
+                                position: relative;
+                            &::before {
+                                content: "";
+                                position: absolute;
+                                height: 2px;
+                                bottom: -6px;
+                                left: 0px;
+                                width: 0px;
+                                visibility: visible;
+                                background-color: $bg-dark;
+                                transition: all 0.3s ease-in-out 0s;
+                            }
+                        }
+                    }
+                    filter: grayscale(100);
+                    opacity: 0.8;
+                    transition: 0.2s ease-in-out;
+                    &:hover {
+                        filter: none;
+                        opacity: 1;
+                        transition: 0.3s ease-in-out;
+                        h3 {
+                            span {
+                                &::before {
+                                    visibility: visible;
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #up-comings {
+        padding-top: 60px;
+        .container {
+            .main-box {
+                display: flex;
+                flex-wrap: wrap;
+                .box {
+                    width: 50%;
+                    position: relative;
+                    z-index: 3;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                    .hover-box {
+                        position: absolute;
+                        inset: 0;
+                        background-color: transparent;
+                        cursor: pointer;
+                        z-index: 2;
+                        display: flex;
+                        justify-content: flex-end;
+                        align-items: flex-start;
+                        flex-direction: column;
+                        padding: 20px;
+                        display: none;
+                        h4 {
+                            color: $text-light;
+                        }
+                        .secondary-btn {
+                            padding-block: 10px;
+                        }
+                    }
+                    &:hover {
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            inset: 0;
+                            background-color: $bg-dark;
+                            opacity: 0.5;
+                            z-index: 1;
+                            cursor: pointer;
+                        }
+                        .hover-box {
+                            display: flex;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #coldest {
+        padding-top: 60px;
+    }
+}

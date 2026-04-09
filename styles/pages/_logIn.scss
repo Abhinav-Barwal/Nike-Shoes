@@ -1,0 +1,165 @@
+@use '../variable' as *;
+
+.log-in {
+    height: 100vh;
+    width: 100vw;
+    @include flex-center;
+    .outer-container {
+        max-width: 500px;
+        max-height: 840px;
+        height: 100%;
+        width: 100%;
+        background-color: $bg-dark;
+        border: 2px solid $border-light;
+        border-radius: 50px;
+        @media screen and (max-width: 576px){
+            border-radius: 0px;
+            max-width: 100%;
+            max-height: 100%;
+            border: none;
+        }
+        form {
+            height: 100%;
+            .logo {
+                padding: 20px;
+                @include flex-end;
+                margin-bottom: 5%;
+            }
+            .cred-container {
+                @include flex-center;
+                flex-direction: column;
+                .cred-inputs {
+                    display: flex;
+                    flex-direction: column;
+                    .user-name {
+                        @include focused-input;
+                        margin-bottom: 20px;
+                        input {
+                            position: relative;
+                            z-index: 2;
+                            
+                        }
+                        label {
+                            z-index: 1;
+                        }
+                    }
+                    .pass {
+                        @include focused-input;
+                        margin-bottom: 5px;
+                        input {
+                            position: relative;
+                            z-index: 2;
+                            background-color: transparent;
+                        }
+                    }
+                    .forgoten-pass {
+                        text-align: end;
+                        span {
+                            display: inline-block;
+                            border-bottom: 1px solid $border-light;
+                            font-size: 14px;
+                            cursor: pointer;
+                            color: $text-light;
+                            &:hover {
+                                color: $text-grey;
+                                border-bottom: 1px solid $border-grey;
+                                transition: 0.2s ease-in-out;
+                            }
+                        }
+                    }
+                }
+                .log-btns {
+                    margin-top: 30px;
+                    max-width: 253px;
+                    width: 100%;
+                    button {
+                        width: 100%;
+                    }
+                    p {
+                        padding-block: 12px;
+                        text-align: center;
+                        color: $text-light;
+                        margin: 0;
+                    }
+                }
+            }
+            .signUP-cont {
+                padding-top: 14%;
+                @include flex-center;
+                position: relative;
+                z-index: 3;
+                .signUp-btn {
+                    position: absolute;
+                    top: 71px;
+                    left: 71px;
+                    padding: 12px 18px;
+                    z-index: 1;
+                }
+                &.kick-animation {
+                    img {
+                        animation: kickAnimation 0.7s ease-in-out;
+                        position: relative;
+                        z-index: 2;
+                    }
+                    .signUp-btn {
+                        animation: signUP 1s ease-in 0.5s;
+                    }
+                }
+                @keyframes kickAnimation {
+                    0% {
+                        transform: rotate(0deg);
+                    }
+                    100% {
+                        transform: rotate(34deg);
+                    }
+                }
+                @keyframes signUP {
+                    0% {
+                        transform: translate(0);
+                    }
+                    20% {
+                        transform: translate(30px, -13px);
+                    }
+                    40% {
+                        transform: translate(129px, -59px);
+                    }
+                    60% {
+                        transform: translate(196px, -47px) rotate(37deg);
+                    }
+                    80% {
+                        transform: translate(217px, 1px) rotate(90deg);
+                    }
+                    100% {
+                        transform: translate(217px, 53px) rotate(90deg);
+
+                    }
+                }
+                &.kick-reverse {
+                    .signUp-btn {
+                        animation: logIn 0.8s ease-in 0.3s;
+                    }
+                    @keyframes logIn {
+                        0% {
+                            transform: translate(217px, 53px) rotate(90deg); 
+                        }
+                        20% {   
+                            transform: translate(217px, 1px) rotate(90deg);
+                        }
+                        40% {
+                            transform: translate(196px, -47px) rotate(37deg);
+                        }
+                        60% {
+                            transform: translate(129px, -59px);
+                        }
+                        80% {
+                            transform: translate(30px, -13px);
+                        }
+                        100% {
+                            transform: translate(0);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

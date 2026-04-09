@@ -1,0 +1,45 @@
+@use '../variable' as *;
+
+.mainCont {
+    padding: 20px;
+    position: relative;
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        textarea {
+            border: 1px solid #000000;
+            margin-bottom: 20px;
+            outline: 0;
+            padding: 5px 10px;
+            min-width: 400px;
+        }
+        button {
+            border: 1px solid #000000;
+            padding: 10px 25px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            &:disabled {
+                background-color: rgb(189, 184, 184);
+                color: rgb(97, 96, 96);
+                border: 1px solid rgb(97, 96, 96);
+            }
+        }
+        .answer {
+            color: red;
+        }
+    }
+    .popup {
+        background-color: #ffffff;
+        border: 1px solid #000000;
+        position: absolute;
+        padding: 30px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        .close-btn {
+            cursor: pointer;
+            margin-bottom: 30px;
+        }
+    }
+}

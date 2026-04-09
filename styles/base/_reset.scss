@@ -1,0 +1,231 @@
+@use '../variable' as *;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    color: $text-dark;
+}
+h1 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    span {
+        cursor: context-menu;
+    }
+    @media screen and (max-width: 1440px) {
+        margin-bottom: 24px;
+    }
+    @media screen and (max-width: 992px) {
+        margin-bottom: 16px;
+    }
+    @media screen and (max-width: 768px) {
+        margin-bottom: 12px;
+    }
+}
+h2 {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    span {
+        cursor: context-menu;
+    }
+    @media screen and (max-width: 1440px) {
+        margin-bottom: 24px;
+    }
+    @media screen and (max-width: 992px) {
+        margin-bottom: 16px;
+    }
+    @media screen and (max-width: 768px) {
+        margin-bottom: 12px;
+    }
+}
+h3 {
+    font-size: 28px;
+    font-weight: 500;
+    span {
+        cursor: context-menu;
+    }
+}
+h4 {
+    font-size: 24px;
+    font-weight: 500;
+}
+h5 {
+    font-size: 20px;
+    font-weight: 500;
+}
+h6 {
+    font-size: 14px;
+    font-weight: 500;
+}
+p {
+    font-size: 16px;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+section,header,footer {
+    width: 100%;
+    @include flex-center;
+}
+section,footer {
+    &:hover {
+        h1,h2,h3 {
+            span {
+                &::before {
+                    visibility: visible;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+.container {
+    max-width: 1920px;
+    width: 100%;
+    padding-inline: 30px;
+    @media screen and (max-width: 1440px) {
+        padding-inline: 12px;
+    }
+}
+.container-fluid {
+    padding-inline: 0;
+}
+a {
+    color: $text-dark;
+    text-decoration: none;
+    font-weight: 500;
+    &:hover {
+        color: $text-darkGrey;
+    }
+}
+ul {
+    margin-bottom: 0;
+}
+input {
+    &:focus {
+        outline: none;
+    }
+}
+.cards {
+    display: flex;
+    flex-direction: column;
+    max-width: 440px;
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+    @media screen and (max-width: 575px) {
+        margin-inline: auto;
+    }
+    .product-img {
+        height: 100%;
+        max-height: 390px;
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        img {
+            width: 100%;
+        }
+        &:hover {
+            &::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background-color: $bg-dark;
+                opacity: 0.3;
+                z-index: 1;
+            }
+        }
+    }
+    .product-info {
+        padding: 20px;
+        position: relative;
+        z-index: 3;
+        .title {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+        .name {
+            font-size: 16px;
+            color: $text-darkGrey;
+        }
+        .type {
+            margin: 0;
+            padding-bottom: 5px;
+        }
+        .price {
+            font-weight: 600;
+        }
+        .addto-cart {
+            position: absolute;
+            top: 9px;
+            right: 10px;
+            font-size: 25px;
+            font-weight: 500;
+            color: $text-dark;
+        }
+        .varients {
+            display: flex;
+            gap: 10px;
+            .varient-data {
+                max-height: 85px;
+                height: 100%;
+                max-width: 85px;
+                overflow: hidden;
+                cursor: pointer;
+                position: relative;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    height: 2px;
+                    bottom: 0px;
+                    left: 0px;
+                    width: 0px;
+                    visibility: hidden;
+                    background-color: $bg-dark;
+                    transition: all 0.3s ease-in-out 0s;  
+                }
+                &:hover {
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        inset: 0;
+                        background-color: $bg-dark;
+                        opacity: 0.3;
+                        z-index: 1;
+                    }
+                    &::after {
+                        visibility: visible;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+    .like {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        z-index: 2;
+    }
+    .brand {
+        position: absolute;
+        top: 10px;
+        left: 15px;
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 2px;
+    }
+}
+.Toastify__toast {
+    font-family: 'Montserrat', sans-serif !important;
+    padding: 20px !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25) !important;
+    .Toastify__toast-icon  {
+        display: none;
+    }
+}

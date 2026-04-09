@@ -1,0 +1,94 @@
+@use '../variable' as *;
+
+main {
+    #mens {
+        display: flex;
+        flex-direction: column;
+        .container-fluid {
+            @include offerBar;
+        }
+        .container {
+            .topHeading {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                h2 {
+                    padding-block: 12px;
+                    margin-bottom: 15px;
+                }
+                .customBtn {
+                    padding: 0px 14px;
+                    @include flex-center;
+                    i {
+                        font-size: 20px;
+                        margin-right: 5px;
+                    }
+                }
+            }
+            .inner-cont {
+                display: grid;
+                grid-template-columns: repeat(4 , auto);
+                gap: 30px;
+                max-height: 1330px;
+                overflow: auto;
+                position: relative;
+                @media screen and (max-width: 992px) {
+                    grid-template-columns: repeat(3 , auto);
+                }
+                @media screen and (max-width: 768px) {
+                    grid-template-columns: repeat(2 , auto);
+                }
+                @media screen and (max-width: 576px) {
+                    grid-template-columns: repeat(1 , auto);
+                }
+                .cardBox {
+                    .cards {
+                        @media screen and (max-width: 576px) {
+                            margin-inline: auto;
+                        }
+                    }
+                }
+                .paggination {
+                    position: absolute;
+                    background-color: $bg-light;
+                    bottom: 0;
+                    right: 0;
+                    display: flex;
+                    border: 1px solid $border-darkGrey;
+                    .prev-page , .next-page {
+                        padding: 5px 15px;
+                        background-color: $bg-darkestGrey;
+                        color: $text-light;
+                        transition: 0.3s ease-in-out;
+                        cursor: pointer;
+                        &:hover {
+                            background-color: $bg-darkestGreyhover;
+                            transition: 0.3s ease-in-out;
+                        }
+                        i {
+                            font-size: 25px;
+                        }
+                    }
+                    .current-pages {
+                        width: 100%;
+                        margin-inline: 2px;
+                        .pages {
+                            display: flex;
+                            padding: 0;
+                            li {
+                                height: 50px;
+                                width: 50px;
+                                @include flex-center;
+                                cursor: pointer;
+                                &:hover {
+                                    background-color: $bg-darkestGrey;
+                                    color: $text-light;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
