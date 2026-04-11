@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Product } from "@/app/data/page";
+import { Product } from "@/app/data/products";
 
 type CardsProps = {
   product: Product;

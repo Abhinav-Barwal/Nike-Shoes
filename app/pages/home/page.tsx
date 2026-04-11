@@ -10,7 +10,7 @@ import 'swiper/css/pagination';
 import Image from "next/image";
 import Link from "next/link";
 import Cards from "../cards/page";
-import { products } from "@/app/data/page";
+import { products } from "@/app/data/products";
 
 export default function Home() {
     return (

@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Header from "@/app/layouts/header";
 import Cards from "../../cards/page";
-import { products } from "@/app/data/page";
+import { products } from "@/app/data/products";
 import Footer from "@/app/layouts/footer";
 import { useState } from "react";
 import { usePathname } from "next/navigation"; 
@@ -20,15 +20,15 @@ export default function Mens() {
         return "Mens";
     }, [pathname]);
 
-    const prev = () => {
-        if (count > 1) {
-            setCount(count - 1)
-        }
-    }
-    const next = () => {
-        if (count > 0)
-        setCount(count + 1)
-    }
+    // const prev = () => {
+    //     if (count > 1) {
+    //         setCount(count - 1)
+    //     }
+    // }
+    // const next = () => {
+    //     if (count > 0)
+    //     setCount(count + 1)
+    // }
     return (
         <main>
             <Header/>
