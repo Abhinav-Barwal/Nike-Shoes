@@ -7,7 +7,7 @@ type CardsProps = {
 
 
 export default function Cards({ product }: CardsProps) {
-    
+    if (!product) return null;
     return (
         <div className="cards" key={product.id}>
             <div className="product-img">
@@ -20,15 +20,16 @@ export default function Cards({ product }: CardsProps) {
                 <p className="price">MRP: {product.mrp}</p>
                 <button className="addto-cart">+</button>
                 <div className="varients">
-                    {product.color?.map((c,index) => c?.image && (
+                    {product.color?.map((c,index) => c?.image ? (
                     <div className="varient-data" key={index}>
                         <Image src={c.image} alt="Nike Shoes Products" width={80} height={100}></Image>
                     </div>
-                    ))}
+                    ) : null
+                )}
                 </div>
             </div>
             <i className="bi bi-heart like"></i>
             <span className="brand">NIKE</span>
         </div>
-    )
+    );
 }
