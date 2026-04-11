@@ -6,7 +6,6 @@ export type Product = {
   type: string,
   mrp: string;
   color: {image: string}[];
-  
 };
 export const products: Product[] = [
     {
@@ -19,7 +18,7 @@ export const products: Product[] = [
         color: [
             {image: '/images/product1.1.avif'},
             {image: '/images/product1.2.avif'},
-            {image: '/images/product1.3.avif'},
+            {image: '/images/product1.3.avif'}
         ] 
     },
     {
@@ -228,4 +227,4 @@ export const products: Product[] = [
             {image: '/images/product20.4.avif'},
         ]
     },
-]
+];
