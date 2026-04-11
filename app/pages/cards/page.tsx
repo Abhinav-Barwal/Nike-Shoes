@@ -20,7 +20,7 @@ export default function Cards({ product }: CardsProps) {
                 <p className="price">MRP: {product.mrp}</p>
                 <button className="addto-cart">+</button>
                 <div className="varients">
-                    {product.color.map((c,index) => (
+                    {product.color?.map((c,index) => c?.image && (
                     <div className="varient-data" key={index}>
                         <Image src={c.image} alt="Nike Shoes Products" width={80} height={100}></Image>
                     </div>
