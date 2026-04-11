@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Header from "@/app/layouts/header";
-import Cards from "../../../cards/page";
+import Cards from "../../../components/Card";
 import { products } from "@/app/data/products";
 import Footer from "@/app/layouts/footer";
 import { useState } from "react";
