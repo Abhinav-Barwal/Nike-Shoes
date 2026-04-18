@@ -44,7 +44,7 @@ export default function Header() {
                     <div className="container">
                         <div className="logo">
                             <Link href="/pages/home">
-                                <Image src={'/images/nikeLogodark.png'} alt="Nike Logo" className="logo" width={94} height={140}></Image>
+                                <Image src={'/images/nikeLogoDark.png'} alt="Nike Logo" className="logo" width={94} height={140}></Image>
                             </Link>
                         </div>
                         <ul className="navMenus">
