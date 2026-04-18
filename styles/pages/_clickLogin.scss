@@ -1,8 +1,6 @@
 @use '../variable' as *;
 
 .clickLogin {
-    height: 100vh;
-    width: 100vw;
     @include bg-image;
     .logo {
         margin-right: 20%;
