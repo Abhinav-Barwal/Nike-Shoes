@@ -12,6 +12,15 @@ Features :-
   Search bar UI
   Trending and featured product sections
 
+For LogIn :-
+
+1. username :- abhinav_barwal & Pass :- 123
+   OR
+2. username :- jagjeet_singh & Pass :- Password@123
+   OR
+
+You can sign up by clicking the Sign Up button, which will take you directly to the home page.
+
 Feel Free to explore :- 
 
 [https://nike-shoes-beta-app.vercel.app]
